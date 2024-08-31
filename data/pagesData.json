@@ -1,0 +1,61 @@
+[
+    {
+      "id": "accordion",
+      "type": "accordion",
+      "title": "FAQ",
+      "items": [
+        {
+          "title": "Question 1",
+          "description": "Answer 1"
+        },
+        {
+          "title": "Question 2",
+          "description": "Answer 2"
+        },
+        {
+          "title": "Question 3",
+          "description": "Answer 3"
+        },
+        {
+          "title": "Question 4",
+          "description": "Answer 4"
+        }
+      ]
+    },
+    {
+      "id": "external-url",
+      "type": "external-url",
+      "url": "https://google.com"
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "title": "Contact Us"
+    },
+    {
+      "id": "grid",
+      "type": "grid",
+      "title": "Grid Page",
+      "items": [
+        { 
+          "title": "Item 1",
+          "description": "Description 1",
+          "image": "https://picsum.photos/580/230",
+          "link": "https://google.com"
+        },
+        { 
+          "title": "Item 2",
+          "description": "Description 2",
+          "image": "https://picsum.photos/580/230",
+          "link": "https://google.com"
+        }
+      ]
+    },
+    {
+      "id": "simple",
+      "type": "simple",
+      "title": "Simple Page",
+      "htmlContent": "<p>This is a simple page with <strong>HTML</strong> content.</p>"
+    }
+  ]
+  

@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Casino App
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is built using **Next.js** with **TypeScript** and **Material-UI**. It demonstrates a structured layout with dynamic and static pages, managed by Redux Toolkit. The app includes features like a collapsible sidebar, modal pop-ups for authentication, and dynamic content rendering through a local API.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Core Technologies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js**: A React framework for server-side rendering and static web applications.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Material-UI**: A popular React UI framework that provides pre-built components and design tools.
+- **Redux Toolkit**: A state management library that simplifies the usage of Redux in modern applications.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Application Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### General Layout.tsx
 
-## Learn More
+- **Header**: A navigation bar with links.
+- **Sidebar**: A collapsible sidebar using the Material-UI Drawer component.
+- **Footer**: Contains links to dynamic pages and other relevant content.
 
-To learn more about Next.js, take a look at the following resources:
+### Homepage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Hero Section**: A prominent display area with engaging visuals or content.
+- **Grid Items**: Two sections organized in a grid layout to display information and links.
+- **Sponsor Component**: A section that displays sponsor logos and related content.
+- **Data Table with Tabs**: A tabulated component to display data, data fetching using Redux Toolkit.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Static Pages
 
-## Deploy on Vercel
+- **Casino Page**: Displays a "Coming Soon" message or placeholder content.
+- **Live Casino Page**: Displays a "Coming Soon" message or placeholder content.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Dynamic Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Content is managed via a local JSON array and accessed through a local API endpoint **`/app/api`**.
+
+- **Accordion Page (/accordion)**: A page featuring accordion components to display content.
+- **External URL Page (/external-url)**: A simple page that redirects or links to an external URL.
+- **Contact Page (/contact)**: A page with a contact form, including fields for name, email, message, etc.
+- **Grid Page (/grid)**: A page that uses a grid layout to display content, similar to the homepage grid items.
+- **Simple Page (/simple)**: A basic content page that uses **`dangerouslySetInnerHTML`** to render HTML content from a string.
+
+### Authentication
+
+- **Login and Registration**: Implemented as modal pop-ups triggered by buttons in the header without backend functionality.
+
+## Application File Structure
+
+This project is organized into several key directories and files:
+
+### **app/**
+- **[id]/**
+  - `page.tsx`: Handles dynamic routing based on the `id` parameter.
+- **api/**
+  - **casinoBets/**
+    - `route.ts`: API route for casino bets.
+  - **sportsBets/**
+    - `route.ts`: API route for sports bets.
+  - **pages/**
+    - `route.ts`: Route handler for dynamic page.
+
+### **components/**
+- `AccordionPageComponent.tsx`: Accordion-style page sections.
+- `ContactPageComponent.tsx`: Contact page.
+- `CustomTextField.tsx`: Custom text field.
+- `Footer.tsx`: Footer.
+- `GridPageComponent.tsx`: Grid-based layout.
+- `HeroSection.tsx`: Hero section.
+- `Layout.tsx`: Page layout.
+- `ProgressComponent.tsx`: Progress display.
+- `SimplePageComponent.tsx`: Simple page sections.
+- `SponsorComponent.tsx`: Sponsors.
+- `TableComponent.tsx`: Data Tables with 2 tabs.
+
+### **live-casino/**
+- `page.tsx`: Live casino static coming soon page.
+
+### **casino/**
+- `page.tsx`: Casino static coming soon page.
+
+### **data/**
+- `casinoBets.json`: Casino bets data.
+- `pagesData.json`: Dynamic pages data.
+- `sportsBets.json`: Sports bets data.
+
+### **store/**
+- **slices/**
+  - `casinoBetsSlice.ts`: State for casino bets.
+  - `pageSlice.ts`: State for dynamic pages.
+  - `sportsBetsSlice.ts`: State for sports bets.
+- `store.ts`: Redux store configuration.
+
+## Setup and Start the Project
+
+### Prerequisites
+- Node.js (v14 or above)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/nastoski/casino-app.git
+   cd casino-app
+
+2. **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+
+3. **Setup environment variables:**:
+    Create an .env.local file in the root of the project:
+    ```bash
+    NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+4. **Run the development server:**:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+
+**The project will be available at http://localhost:3000**
